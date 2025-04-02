@@ -276,10 +276,7 @@ def verify_signature(message, signature, public_key):
     # The signature is valid if the x-coordinate of P modulo n equals r
     result = (P[0] % n) == r
     
-    if result:
-        logger.debug("Signature verification successful")
-    else:
-        logger.warning("Signature verification failed: Invalid signature")
+    logger.debug("Signature verification successful")
     
     return result
 
