@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}User Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="mb-4">
+        <h1><i class="fas fa-tachometer-alt"></i> User Dashboard</h1>
+        <p class="lead">Welcome to your account, {{ username }}.</p>
+    </div>
+    
+    <div class="alert alert-info">
+        <h5 class="alert-heading"><i class="fas fa-info-circle"></i> System Maintenance</h5>
+        <p>The system is currently undergoing scheduled maintenance. Some features may be temporarily unavailable. We apologize for any inconvenience.</p>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-chart-line"></i> Account Overview</h5>
+                </div>
+                <div class="card-body">
+                    <div class="text-center py-4">
+                        <i class="fas fa-database fa-3x text-muted mb-3"></i>
+                        <p class="lead">No account data available due to system maintenance.</p>
+                        <p class="text-muted">Please check back later.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-bell"></i> Recent Notifications</h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">System Maintenance</h6>
+                                <small class="text-muted">Just now</small>
+                            </div>
+                            <p class="mb-1">The system is currently undergoing scheduled maintenance.</p>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Login Detected</h6>
+                                <small class="text-muted">Just now</small>
+                            </div>
+                            <p class="mb-1">A new login was detected from your current location.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-user-circle"></i> Profile</h5>
+                </div>
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-user fa-5x text-primary"></i>
+                    </div>
+                    <h5 class="card-title">{{ username }}</h5>
+                    <p class="card-text text-muted">Registered User</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-cog"></i> Quick Settings</h5>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action disabled">
+                            <i class="fas fa-lock me-2"></i> Privacy Settings
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action disabled">
+                            <i class="fas fa-bell me-2"></i> Notification Preferences
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action disabled">
+                            <i class="fas fa-key me-2"></i> Security Settings
+                        </a>
+                        <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action">
+                            <i class="fas fa-sign-out-alt me-2"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Account Locked{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="text-center mb-0"><i class="fas fa-lock"></i> Account Locked</h3>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-user-lock fa-5x text-danger mb-3"></i>
+                        <h4>Security Alert</h4>
+                        <p class="lead">Your account has been temporarily locked due to multiple failed login attempts.</p>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <p><strong>Username:</strong> {{ username }}</p>
+                        <p><strong>Locked Until:</strong> {{ format_time(locked_until) }}</p>
+                        <p class="mb-0">Please try again after the lockout period expires, or contact an administrator if you believe this is an error.</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-grid">
+                        <a href="{{ url_for('login') }}" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left"></i> Return to Login
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
